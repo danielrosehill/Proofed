@@ -24,6 +24,12 @@ Research prototype for Hugging Face. Status 2026-10-24: planning; no data split,
 - Source-of-truth order: the voice note, then `docs/development-plan.md`, then everything else.
   When they disagree, record the decision in the plan.
 
+## Skills for this repo
+
+- `skill:modular-research/research-report`: research tasks (e.g. phase 1 in `docs/tasks.md`)
+  go to `research/YYYY-MM-DD-<slug>/` as a timestamped executive report PDF, emailed.
+- `skill:ideation-planning/voice-note-kickoff`: further voice notes about Proofed.
+
 ## Related repos
 
 - `~/repos/github/audio-dictation/English-Hebrew-Codeswitching-Parakeet-Finetune`: the NeMo
