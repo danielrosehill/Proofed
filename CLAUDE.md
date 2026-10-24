@@ -16,6 +16,7 @@ Research prototype for Hugging Face. Status 2026-10-24: phase 1 research done (v
 - Recording: the recorder app (`~/repos/github/ai-models/Voice-Training-Recorder`,
   train.hebrish.app) has a **Proofed** training mode since release 25 (2026-10-24). Takes land in
   `danielrosehill/Read-Aloud-Voice-Sentences` and the `Hebrish/*` task subsets.
+- Recording targets per subtask: `docs/recording-targets.md`.
 - Later voice notes go in their own `context/voice-notes/YYYY-MM-DD-<slug>/` (skill
   `ideation-planning:voice-note-kickoff`).
 
