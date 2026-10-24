@@ -27,8 +27,10 @@ Seeded 2026-10-24 from the [development plan](development-plan.md). Tick and dat
 - [ ] **(D)** Set a minimum per category and record the missing minutes.
 - [ ] Record the gaps in the recorder's **Proofed** training mode (train.hebrish.app, release 25):
       self-corrections (0 takes), asides, paragraphs, whispered and false starts first.
-- [ ] Publish `danielrosehill/Proofed-ASR-Cleanup-Training-Data` (public, ungated): Daniel's
-      in-scope takes, no code-switching rows, source split kept.
+- [x] Publish `danielrosehill/Proofed-ASR-Cleanup-Training-Data` (public, ungated): Daniel's
+      in-scope takes, no code-switching rows, source split kept. **Done 2026-10-24**, commit
+      2c51919f (600 takes, ~75 min, 9 tasks; built from Read-Aloud-Voice-Sentences @ c544f891).
+      Rebuild and re-upload as new takes land.
 - [ ] Synthesis plan: TTS self-corrections (Disfl-QA patterns), asides, and numbers/currency
       (NeMo TN verbalising digit targets); voice per the answer to the question below.
 - [ ] **(D)** Training-data licence policy: permissive only, or also NC/LDC data (research §5).

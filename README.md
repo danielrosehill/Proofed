@@ -28,3 +28,4 @@ The project started from a 25-minute voice note:
 - [Task taxonomy](docs/taxonomy.md) ([JSON](data/taxonomy.json)): every post-processing task, its operation type and tier
 - [Paragraph token survey](research/2026-10-24-phase-1-feasibility/notes/06-parakeet-newline-survey.md): newline support across all NVIDIA Parakeet, Canary and Nemotron speech models
 - [Recording targets](docs/recording-targets.md): takes per subtask for the first fine-tune
+- [Training data on Hugging Face](https://huggingface.co/datasets/danielrosehill/Proofed-ASR-Cleanup-Training-Data): public, CC-BY-4.0; first snapshot 2026-10-24 (600 takes, ~75 min)

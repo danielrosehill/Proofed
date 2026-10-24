@@ -223,7 +223,7 @@ Full survey: `research/2026-10-24-phase-1-feasibility/notes/06-parakeet-newline-
 | 4 | Prototype: Option A fine-tune on the core tier, then the other tiers | planned |
 | 5 | Comparisons: Option B where A fails; Canary and Qwen3-ASR-0.6B arms | planned |
 
-The training blend so far is being published as a public dataset,
+The training data so far is published as a public dataset,
 `danielrosehill/Proofed-ASR-Cleanup-Training-Data` (CC-BY-4.0).
 
 # Questions for the Parakeet team
