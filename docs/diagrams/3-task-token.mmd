@@ -1,0 +1,9 @@
+flowchart LR
+  A([Audio]) --> ENC[FastConformer encoder]
+  K["task token<br/>&lt;verbatim&gt; | &lt;clean&gt;"] --> D
+  ENC --> D[Attention decoder<br/>Canary-style AED]
+  D --> O1["&lt;verbatim&gt;: uh I think I think…"]
+  D --> O2["&lt;clean&gt;: I think it's $60."]
+  classDef m fill:#e8eef6,stroke:#1f4e79,color:#111;
+  classDef n fill:#fdf2e9,stroke:#c2410c,color:#111;
+  class ENC m; class D n;

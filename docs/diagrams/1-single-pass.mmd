@@ -1,0 +1,9 @@
+flowchart LR
+  A([Audio]) --> ENC[FastConformer encoder<br/>full context, offline]
+  ENC --> J[TDT joint + prediction net<br/>fine-tuned on clean targets]
+  J --> T["clean tokens<br/>I think it's $60. ^ Next…"]
+  T --> P[detokenise<br/>^ → blank line]
+  P --> O["clean text"]
+  classDef m fill:#e8eef6,stroke:#1f4e79,color:#111;
+  classDef n fill:#fdf2e9,stroke:#c2410c,color:#111;
+  class ENC m; class J n;

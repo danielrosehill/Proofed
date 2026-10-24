@@ -16,6 +16,9 @@ Research prototype for Hugging Face. Status 2026-10-24: phase 1 research done (v
 - Recording: the recorder app (`~/repos/github/ai-models/Voice-Training-Recorder`,
   train.hebrish.app) has a **Proofed** training mode since release 25 (2026-10-24). Takes land in
   `danielrosehill/Read-Aloud-Voice-Sentences` and the `Hebrish/*` task subsets.
+- Design: `docs/concept.md` → `docs/Proofed-concept-note.pdf` (render with the modular-research
+  `render_pdf.sh`; diagrams `docs/diagrams/*.mmd` → `docs/img/*.png` via mermaid-cli 11.4.2),
+  taxonomy `docs/taxonomy.md` + `data/taxonomy.json`, paragraph-token survey `notes/06`.
 - Recording targets per subtask: `docs/recording-targets.md`.
 - Later voice notes go in their own `context/voice-notes/YYYY-MM-DD-<slug>/` (skill
   `ideation-planning:voice-note-kickoff`).

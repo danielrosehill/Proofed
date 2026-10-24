@@ -1,0 +1,34 @@
+{
+  "version": "2026-10-24",
+  "doc": "docs/taxonomy.md",
+  "admission_rule": "right for every user, every time; independent of purpose and domain; one scorable clean output",
+  "ops": {
+    "delete": "drop spans; rest unchanged and in order",
+    "delete-ctx": "drop a span decidable only from later audio",
+    "rewrite": "replace by written form, same order",
+    "reorder": "written form moves a token",
+    "structure": "insert layout (paragraph break)",
+    "filter": "drop speech not meant for the transcript",
+    "robust": "no text change; audio condition differs"
+  },
+  "tasks": [
+    {"id": "A1", "family": "disfluency", "task": "filled pauses", "op": "delete", "tier": "core", "category": "disfluency", "status": "in"},
+    {"id": "A2", "family": "disfluency", "task": "repetitions", "op": "delete", "tier": "core", "category": "repetitions", "status": "in"},
+    {"id": "A3", "family": "disfluency", "task": "false starts / restarts", "op": "delete", "tier": "core", "category": "false-starts", "status": "in"},
+    {"id": "A4", "family": "disfluency", "task": "abandoned sentences", "op": "delete-ctx", "tier": "core", "category": "false-starts", "status": "in"},
+    {"id": "B1", "family": "repair", "task": "self-corrections", "op": "delete-ctx", "tier": "ambitious", "category": "self-corrections", "status": "in"},
+    {"id": "B2", "family": "repair", "task": "editing commands (scratch that)", "op": "delete-ctx", "tier": "ambitious", "category": "self-corrections", "status": "in"},
+    {"id": "C1", "family": "written-form", "task": "numbers, dates, units, times", "op": "rewrite", "tier": "core", "category": "numerics", "status": "in"},
+    {"id": "C2", "family": "written-form", "task": "money", "op": "reorder", "tier": "core", "category": "currency", "status": "in"},
+    {"id": "D1", "family": "structure", "task": "paragraph breaks", "op": "structure", "tier": "ambitious", "category": "paragraphs", "status": "in"},
+    {"id": "E1", "family": "filtering", "task": "asides to someone else", "op": "filter", "tier": "experimental", "category": "asides", "status": "in"},
+    {"id": "F1", "family": "robustness", "task": "whispered speech", "op": "robust", "tier": "robustness", "category": "whispered", "status": "in"},
+    {"id": "C3", "family": "written-form", "task": "web addresses", "op": "rewrite", "category": "web-addresses", "status": "open"},
+    {"id": "C4", "family": "written-form", "task": "spelled-out letters", "op": "rewrite", "category": "spelled-out", "status": "open"},
+    {"id": "C5", "family": "written-form", "task": "acronyms in standard form", "op": "rewrite", "category": "acronyms", "status": "open"},
+    {"id": "C6", "family": "written-form", "task": "expanded chat shorthand", "op": "rewrite", "category": "expanded-acronyms", "status": "open"},
+    {"id": "A5", "family": "disfluency", "task": "discourse markers and editing terms", "op": "delete", "category": null, "status": "open"}
+  ],
+  "inherited": ["sentence punctuation", "casing"],
+  "out_of_scope": ["domain vocabulary (code-switching, tech, names, brands)", "style and format", "translation", "summarisation", "singing", "put-on voices", "name cipher"]
+}

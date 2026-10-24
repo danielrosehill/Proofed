@@ -99,9 +99,12 @@ Each line says whether it is a recommendation or a decision.
   supported; self-corrections, asides and paragraphs are untested anywhere (research §3.2, §3.4).
 - **Base model:** keep `nvidia/parakeet-tdt-0.6b-v2`; Qwen3-ASR-0.6B as the comparison arm
   (recommendation; it matches Daniel's stated preference, vn 22:47).
-- **Paragraphs:** Parakeet's tokenizer has no newline. Recommended route: train with the ` ^ `
-  sentinel (single token, id 918) and replace it with a blank line after decoding. Awaiting
-  Daniel (open question 2).
+- **Paragraphs:** Parakeet's tokenizer has no newline, and none of the 22 NVIDIA Parakeet, Canary
+  or Nemotron speech tokenizers has one (note 06, 2026-10-24). Recommended route (updated by note
+  06): add a `"\n"` token to v2 at id 1024 the way NVIDIA added `<EOU>`/`<EOB>` to
+  parakeet_realtime_eou_120m-v1, with a TDT-aware warm start; the ` ^ ` sentinel (id 918) as the
+  control arm; parakeet-tdt-0.6b-v3's reserved spltoken as the fallback. Awaiting Daniel (open
+  question 2).
 - **Forgetting:** replay first (~10% LibriSpeech-PC), joint adapters as the fallback.
 - **Data:** about 42 min of in-scope takes, none for self-corrections. Public corpora (DisfluencySpeech,
   AMI, ICSI) and TTS synthesis must fill most of it; SPGISpeech is excluded by its licence.
@@ -113,7 +116,7 @@ Each line says whether it is a recommendation or a decision.
    answer: yes, the English-only Parakeet v2 is fine; code-switching comes back only in a later
    layer, and that layer's base question can wait. Confirm.
 2. **Paragraphs.** Parakeet's tokenizer may have no newline token (vn 16:19, "if I'm not
-   mistaken"); verified 2026-10-24: no newline token, `^` sentinel recommended. Routes: sentinel, add a token and resize the decoder, change base model,
+   mistaken"); verified 2026-10-24: no newline token in any Parakeet/Canary model (note 06); adding a token to v2 recommended, `^` sentinel as control. Routes: sentinel, add a token and resize the decoder, change base model,
    or leave paragraphs to `ASR-Paragraph-Breaks`?
 3. **Tiers.** Confirm the table above, especially the "open" row.
 4. **One model or two passes inside one?** vn 19:27 asks whether one model can hold an ASR pass

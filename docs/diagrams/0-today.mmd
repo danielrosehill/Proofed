@@ -1,0 +1,8 @@
+flowchart LR
+  A([Audio]) --> E1[ASR model<br/>e.g. Parakeet 0.6B]
+  E1 --> T1["raw text<br/>uh, I think, I think it's<br/>fifty dollars, no, sixty"]
+  T1 --> L[Second model<br/>LLM or text cleaner<br/>0.6B–8B+]
+  L --> T2["clean text<br/>I think it's $60."]
+  classDef m fill:#e8eef6,stroke:#1f4e79,color:#111;
+  classDef t fill:#fff,stroke:#999,color:#333;
+  class E1,L m; class T1,T2 t;

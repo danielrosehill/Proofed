@@ -1,0 +1,15 @@
+flowchart LR
+  A([Audio]) --> ENC[Shared FastConformer encoder]
+  ENC --> P1[Pass 1: TDT head<br/>verbatim transcript]
+  P1 --> V["verbatim<br/>uh I think I think it's fifty dollars no sixty"]
+  ENC -- encoder states --> P2[Pass 2: small deliberation decoder<br/>Transformer, attends to audio + pass-1 tokens]
+  V --> P2
+  P2 --> C["clean<br/>I think it's $60."]
+  subgraph ONE[one checkpoint, one model file]
+    ENC
+    P1
+    P2
+  end
+  classDef m fill:#e8eef6,stroke:#1f4e79,color:#111;
+  classDef n fill:#fdf2e9,stroke:#c2410c,color:#111;
+  class ENC,P1 m; class P2 n;
