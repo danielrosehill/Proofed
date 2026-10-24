@@ -18,3 +18,4 @@ The project started from a 25-minute voice note:
 - [Transcript, cleaned](context/voice-notes/2026-10-24-proofed-brief/transcript-clean.md) ·
   [raw ASR output](context/voice-notes/2026-10-24-proofed-brief/transcript-raw.txt)
 - [Development plan](docs/development-plan.md) · [Tasks](docs/tasks.md)
+- [Project brief (PDF)](context/voice-notes/2026-10-24-proofed-brief/Proofed-project-brief.pdf): overview, plan and the edited transcript in one document
