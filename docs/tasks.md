@@ -5,16 +5,16 @@ Seeded 2026-10-24 from the [development plan](development-plan.md). Tick and dat
 
 ## Phase 1: research
 
-- [ ] Check whether `nvidia/parakeet-tdt-0.6b-v2`'s tokenizer has a newline or paragraph token
+- [x] 2026-10-24 ([research](../research/2026-10-24-phase-1-feasibility/report.md) §3.1: no newline; `^` sentinel works). Check whether `nvidia/parakeet-tdt-0.6b-v2`'s tokenizer has a newline or paragraph token
       (load the `.nemo`, inspect the SentencePiece vocab). Start here: it decides the paragraph task.
-- [ ] Survey prior art: ASR models trained to output clean or formatted text directly (unified
+- [x] 2026-10-24 ([research](../research/2026-10-24-phase-1-feasibility/report.md) §3.2). Survey prior art: ASR models trained to output clean or formatted text directly (unified
       ASR + post-processing), with sources and dates, confirmed vs inferred.
-- [ ] Survey ASR models that emit paragraph breaks natively.
-- [ ] Shortlist candidate base models besides Parakeet (on-device size, English, PnC), with a
+- [x] 2026-10-24 ([research](../research/2026-10-24-phase-1-feasibility/report.md) §3.1: none documented). Survey ASR models that emit paragraph breaks natively.
+- [x] 2026-10-24 ([research](../research/2026-10-24-phase-1-feasibility/report.md) §3.3: keep v2; Qwen3-ASR-0.6B as comparison arm). Shortlist candidate base models besides Parakeet (on-device size, English, PnC), with a
       reason to switch or not.
-- [ ] Feasibility note: can an RNN-T/TDT decoder learn deletions (asides, self-corrections) from
+- [x] 2026-10-24 ([research](../research/2026-10-24-phase-1-feasibility/report.md) §3.4). Feasibility note: can an RNN-T/TDT decoder learn deletions (asides, self-corrections) from
       read-aloud data? Look for evidence.
-- [ ] Write `docs/research.md`.
+- [x] 2026-10-24 Write `docs/research.md`.
 
 ## Phase 2: data audit
 
@@ -25,6 +25,14 @@ Seeded 2026-10-24 from the [development plan](development-plan.md). Tick and dat
 - [ ] Check that these categories' targets are the clean text (not the spoken text).
 - [ ] Write `docs/data.md` with the gaps.
 - [ ] **(D)** Set a minimum per category and record the missing minutes.
+- [ ] Record the gaps in the recorder's **Proofed** training mode (train.hebrish.app, release 25):
+      self-corrections (0 takes), asides, paragraphs, whispered and false starts first.
+- [ ] Publish `danielrosehill/Proofed-ASR-Cleanup-Training-Data` (public, ungated): Daniel's
+      in-scope takes, no code-switching rows, source split kept.
+- [ ] Synthesis plan: TTS self-corrections (Disfl-QA patterns), asides, and numbers/currency
+      (NeMo TN verbalising digit targets); voice per the answer to the question below.
+- [ ] **(D)** Training-data licence policy: permissive only, or also NC/LDC data (research §5).
+- [ ] **(D)** Synthetic voice: Kokoro voices or Daniel's voice clone.
 
 ## Phase 3: spec
 

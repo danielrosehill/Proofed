@@ -19,3 +19,4 @@ The project started from a 25-minute voice note:
   [raw ASR output](context/voice-notes/2026-10-24-proofed-brief/transcript-raw.txt)
 - [Development plan](docs/development-plan.md) · [Tasks](docs/tasks.md)
 - [Project brief (PDF)](context/voice-notes/2026-10-24-proofed-brief/Proofed-project-brief.pdf): overview, plan and the edited transcript in one document
+- [Phase 1 research (PDF)](research/2026-10-24-phase-1-feasibility/Proofed-research-report.pdf): feasibility, prior art, base models, training data · [summary](docs/research.md)

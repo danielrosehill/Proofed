@@ -83,12 +83,29 @@ Plus plain-English replay (`general`, LibriSpeech-PC) so the base does not forge
 | Phase | Work | Exit test |
 |---|---|---|
 | 0. Brief | this repo, cleaned transcript, plan, tasks | done 2026-10-24 |
-| 1. Research | prior art (unified ASR + post-processing models), ASR models with a paragraph/newline token, feasibility of training these tasks into an ASR decoder, candidate base models | `docs/research.md` with sources, dates, and a confirmed/inferred status per claim |
+| 1. Research | prior art (unified ASR + post-processing models), ASR models with a paragraph/newline token, feasibility of training these tasks into an ASR decoder, candidate base models | `docs/research.md` with sources, dates, and a confirmed/inferred status per claim **Done 2026-10-24:** [research](research.md). |
 | 2. Data audit | minutes and takes per in-scope category; gaps | table in `docs/data.md`; every core category ≥ the minimum Daniel sets |
 | 3. Spec | final task list and tiers, targets, metrics, blend ratios | `docs/spec.md` agreed |
 | 4. Prototype | first fine-tune on core + whispered | per-category eval vs stock Parakeet; no regression over 1 pt WER on `general` |
 | 5. Extend | ambitious and experimental tasks one at a time | each task's eval, kept or dropped with a reason |
 | 6. Publish | HF model, card, eval table | model card live |
+
+## Phase 1 results (2026-10-24)
+
+From [docs/research.md](research.md), which summarises the [executive report](../research/2026-10-24-phase-1-feasibility/report.md).
+Each line says whether it is a recommendation or a decision.
+
+- **Viable:** end-to-end models learn deletion and formatting from clean targets. The core tier is
+  supported; self-corrections, asides and paragraphs are untested anywhere (research §3.2, §3.4).
+- **Base model:** keep `nvidia/parakeet-tdt-0.6b-v2`; Qwen3-ASR-0.6B as the comparison arm
+  (recommendation; it matches Daniel's stated preference, vn 22:47).
+- **Paragraphs:** Parakeet's tokenizer has no newline. Recommended route: train with the ` ^ `
+  sentinel (single token, id 918) and replace it with a blank line after decoding. Awaiting
+  Daniel (open question 2).
+- **Forgetting:** replay first (~10% LibriSpeech-PC), joint adapters as the fallback.
+- **Data:** about 42 min of in-scope takes, none for self-corrections. Public corpora (DisfluencySpeech,
+  AMI, ICSI) and TTS synthesis must fill most of it; SPGISpeech is excluded by its licence.
+- **Biggest risk:** acted-to-natural transfer, untested anywhere. Record the natural eval set early.
 
 ## Open questions (need Daniel)
 
@@ -96,12 +113,16 @@ Plus plain-English replay (`general`, LibriSpeech-PC) so the base does not forge
    answer: yes, the English-only Parakeet v2 is fine; code-switching comes back only in a later
    layer, and that layer's base question can wait. Confirm.
 2. **Paragraphs.** Parakeet's tokenizer may have no newline token (vn 16:19, "if I'm not
-   mistaken"); to verify in phase 1. If not: add a token and resize the decoder, change base model,
+   mistaken"); verified 2026-10-24: no newline token, `^` sentinel recommended. Routes: sentinel, add a token and resize the decoder, change base model,
    or leave paragraphs to `ASR-Paragraph-Breaks`?
 3. **Tiers.** Confirm the table above, especially the "open" row.
 4. **One model or two passes inside one?** vn 19:27 asks whether one model can hold an ASR pass
    and a post-processing pass. Treated as a research question in phase 1, not a design commitment.
 5. **Recording budget.** How many more minutes per thin category is Daniel willing to record?
+6. **Training-data licence policy** (added 2026-10-24): permissive data only, or also
+   non-commercial and LDC data (Switchboard, GigaSpeech, EARS)? It decides what a published model
+   may be trained on (research §5).
+7. **Synthetic voice** (added 2026-10-24): Kokoro's voices, or Daniel's own voice clone for TTS takes?
 
 ## Risks
 

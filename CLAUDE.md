@@ -3,7 +3,7 @@
 Public repo for Proofed: a fine-tune of a stock ASR model (Parakeet TDT 0.6B v2 first) trained only
 on post-processing tasks (disfluencies, repeats, false starts, numbers in digits, self-corrections,
 asides, paragraphs, whispered speech), so it writes clean text in one pass with no LLM step.
-Research prototype for Hugging Face. Status 2026-10-24: planning; no data split, run or model.
+Research prototype for Hugging Face. Status 2026-10-24: phase 1 research done (viable); no data split, run or model.
 
 ## Where things are
 
@@ -11,6 +11,11 @@ Research prototype for Hugging Face. Status 2026-10-24: planning; no data split,
   `transcript-raw.txt` (AssemblyAI output, unedited; never "fix" it), `transcript-clean.md`,
   `processing.json` (Drive id, AssemblyAI id).
 - Plan, scope, tiers, open questions: `docs/development-plan.md`. Tasks: `docs/tasks.md`.
+- Research: `docs/research.md` (summary), `research/2026-10-24-phase-1-feasibility/` (report, notes,
+  sources).
+- Recording: the recorder app (`~/repos/github/ai-models/Voice-Training-Recorder`,
+  train.hebrish.app) has a **Proofed** training mode since release 25 (2026-10-24). Takes land in
+  `danielrosehill/Read-Aloud-Voice-Sentences` and the `Hebrish/*` task subsets.
 - Later voice notes go in their own `context/voice-notes/YYYY-MM-DD-<slug>/` (skill
   `ideation-planning:voice-note-kickoff`).
 
