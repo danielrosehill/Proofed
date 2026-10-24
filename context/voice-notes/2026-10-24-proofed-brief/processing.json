@@ -1,0 +1,36 @@
+{
+  "source": {
+    "drive_file_id": "1gLOAwk4XPhMDemM4P1wNuL7GVTRwfKvM",
+    "drive_name": "proofed.mp3",
+    "drive_folder_id": "1FBdCBdxL_td4vNth7URpIx7KBF-PPGXY",
+    "created": "2026-10-24T10:54:07.926Z",
+    "bytes": 11846582
+  },
+  "audio": {
+    "committed": "polished",
+    "polish": {
+      "chain": "audio-production-private:polish-voice-note",
+      "duration_before_s": 1479.91,
+      "duration_after_s": 1479.6,
+      "lufs_before": -24.3,
+      "lufs_after": -17.0
+    }
+  },
+  "asr": {
+    "provider": "assemblyai",
+    "model": "universal",
+    "transcript_id": "fbc93846-95b4-4d0b-8121-e45a285ccebb",
+    "audio_duration_s": 1480,
+    "confidence": 0.9704,
+    "word_boost": ["Proofed", "AssemblyAI", "Whisper", "Parakeet", "Gemini", "Qwen"]
+  },
+  "derived": [
+    "transcript-clean.md",
+    "docs/development-plan.md",
+    "docs/tasks.md",
+    "CLAUDE.md",
+    "README.md"
+  ],
+  "processed": "2026-10-24",
+  "skill": "ideation-planning:voice-note-kickoff"
+}
