@@ -20,3 +20,4 @@ The project started from a 25-minute voice note:
 - [Development plan](docs/development-plan.md) · [Tasks](docs/tasks.md)
 - [Project brief (PDF)](context/voice-notes/2026-10-24-proofed-brief/Proofed-project-brief.pdf): overview, plan and the edited transcript in one document
 - [Phase 1 research (PDF)](research/2026-10-24-phase-1-feasibility/Proofed-research-report.pdf): feasibility, prior art, base models, training data · [summary](docs/research.md)
+- [Brief and research (PDF)](docs/Proofed-brief-and-research.pdf): both of the above in one document, 29 pages
